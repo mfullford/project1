@@ -8,7 +8,7 @@ Here is my [wireframe](https://gomockingbird.com/projects/pqzpips).
 
 ### To Do List
 
-Here is my [Trello to do list](https://trello.com/b/FOPPosft/game-of-thrones-trivia.
+Here is my [Trello to do list](https://trello.com/b/FOPPosft/game-of-thrones-trivia).
 
 
 ----- Plan B------
