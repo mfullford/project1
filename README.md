@@ -1,3 +1,19 @@
+# Game of Thrones Trivia
+
+The idea for my Project 1 is a trivia style game. It will be in a grid and once you click on the grid, the question will pop up with 4 potential answers. Once the player chooses one, it will display whether or not the answer was correct and if it was correct, it will add a point to the total score for that player. Once all questions have been answered, the winner will be announced.
+
+### Wireframe
+
+Here is my [wireframe](https://gomockingbird.com/projects/pqzpips).
+
+### To Do List
+
+Here is my [Trello to do list](https://trello.com/b/FOPPosft/game-of-thrones-trivia.
+
+
+----- Plan B------
+
+
 # Pet A Puppy
 
 The idea for my Project 1 is a game that involves:
