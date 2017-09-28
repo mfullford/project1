@@ -76,32 +76,32 @@ $(document).ready(function() {
               }, 6000);
 
 	// basic timer layout
-		// 	function startTimer(duration, display) {
-		// 	    var timer = duration, minutes, seconds;
-		// 	    setInterval(function () {
-		// 	        minutes = parseInt(timer / 60, 10);
-		// 	        seconds = parseInt(timer % 60, 10);
+			function startTimer(duration, display) {
+			    var timer = duration, minutes, seconds;
+			    setInterval(function () {
+			        minutes = parseInt(timer / 60, 10);
+			        seconds = parseInt(timer % 60, 10);
 
-		// 	        minutes = minutes < 10 ? "0" + minutes : minutes;
-		// 	        seconds = seconds < 10 ? "0" + seconds : seconds;
+			        minutes = minutes < 10 ? "0" + minutes : minutes;
+			        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-		// 	        display.text(minutes + ":" + seconds);
-		// 	        	// need to cap it at 30 secs
-		// 	        if (--timer < 0) {
-		// 	        	alert ("Sorry out of time! Next player, you're up!")
-		// // 	        	if(window.prompt('Out of time! Check out the high scores at','the Scoreboard Page'))
-  // // location.href='https://mfullford.github.io/project1/scoreBoard.html';
-		// 	            timer = duration;
-		// 	        }
-		// 	    }, 1000);
-		// 	}
-		// 		// 30 seconds per round
-		// 	jQuery(function ($) {
-		// 	    var thirtySeconds = 30 * 1,
-		// 	        display = $('#counter');
-		// 	        console.log("hey this is counting")
-		// 	    startTimer(thirtySeconds, display);
-		// 	});
+			        display.text(minutes + ":" + seconds);
+			        	// need to cap it at 30 secs
+			        if (--timer < 0) {
+			        	alert ("Sorry out of time! Next player, you're up!")
+		// 	        	if(window.prompt('Out of time! Check out the high scores at','the Scoreboard Page'))
+  // location.href='https://mfullford.github.io/project1/scoreBoard.html';
+			            timer = duration;
+			        }
+			    }, 1000);
+			}
+				// 30 seconds per round
+			jQuery(function ($) {
+			    var thirtySeconds = 30 * 1,
+			        display = $('#counter');
+			        console.log("hey this is counting")
+			    startTimer(thirtySeconds, display);
+			});
 
 
 		// Created a form for users to submit their high scores
