@@ -1,6 +1,15 @@
 $(document).ready(function() {
 
-  			// create a container and a box to move around 
+
+	// var gobal hand set interval runs every 500 seconds 
+
+	// close interaction with cursor
+
+	$("body").css('cursor', 'url(images/hand.png) 6 6, auto');
+
+
+
+  		// create a container and a box to move around 
 	var game = $('#game'),
 	    buddy = $('#buddy'),
 	    maxValue = game.width() - buddy.width(),
@@ -35,16 +44,16 @@ $(document).ready(function() {
 
 		function setBG(){
 			if (Math.round(Math.random())){
-				return "https://ak3.picdn.net/shutterstock/videos/24706739/thumb/1.jpg";
+				return "http://www.pholody.com/img/running_dog.png";
 			 } else {
- 	    		return "https://ak5.picdn.net/shutterstock/videos/24116350/thumb/1.jpg?i10c=img.resize(height:160)";																								  } 
+ 	    		return "https://s-media-cache-ak0.pinimg.com/originals/30/82/d0/3082d0250b91ff5dc176160101f744e4.jpg";																								  } 
 			 	}	
 				
 
 		function dropBox(){																								
 			var length = random(100, ($(".game").width() - 100));
 			var velocity = random(8000, 12000);
-			var size = random(100, 150);
+			var size = random(100, 120);
 			var thisBox = $("<div/>", {
 			class: "box",
 			style:  "width:" +size+ "px; height:"+size+"px; left:" + length+  "px; transition: transform " +velocity+ "ms linear;"
@@ -54,9 +63,9 @@ $(document).ready(function() {
 //set data and bg based on data
 		thisBox.data("test", Math.round(Math.random()));
 			if(thisBox.data("test")){
-				thisBox.css({"background": "url('https://ak3.picdn.net/shutterstock/videos/24706739/thumb/1.jpg')", "background-size":"contain", "background-repeat":"no-repeat"});
+				thisBox.css({"background": "url('http://www.pholody.com/img/running_dog.png')", "background-size":"contain", "background-repeat":"no-repeat"});
 			} else {
-				thisBox.css({"background": "url('https://ak5.picdn.net/shutterstock/videos/24116350/thumb/1.jpg?i10c=img.resize(height:160)')", "background-size":"contain", "background-repeat":"no-repeat"});
+				thisBox.css({"background": "url('https://s-media-cache-ak0.pinimg.com/originals/30/82/d0/3082d0250b91ff5dc176160101f744e4.jpg')", "background-size":"contain", "background-repeat":"no-repeat"});
 			} 
 	  
 //insert gift element
@@ -65,7 +74,7 @@ $(document).ready(function() {
 //random start for animation
 		setTimeout(function(){
 		thisBox.addClass("move");
-		}, random(0, 5000) );
+		}, random(0, 6000) );
   
 //remove this object when animation is over
 		thisBox.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
@@ -73,20 +82,22 @@ $(document).ready(function() {
     			$(this).remove();
 	  			});
 				
-}
+		}
+		
 		for (i = 0; i < 10; i++) { 
 			dropBox();
 		}
 
 		$(document).on('click', '.box', function(){
 
+		var score = 0;
   
 		if($(this).data("test")){
-			score += 1;
+			score++;
 		} else {
-			score -= 1;
+			score++;
 		}
-  
+   		
    		$(".score").html(score);
   		$(this).remove();
  		});
@@ -95,7 +106,7 @@ $(document).ready(function() {
                  for (i = 0; i < 10; i++) { 
                   dropBox();
                 }  
-              }, 5000);
+              }, 6000);
 
 // 	//basic timer layout
 // 			// function startTimer(duration, display) {
@@ -135,30 +146,43 @@ $(document).ready(function() {
 // }
 
 
-// function collision($div1, $div2) {
-//         var x1 = $div1.offset().left;
-//         var y1 = $div1.offset().top;
-//         var h1 = $div1.outerHeight(true);
-//         var w1 = $div1.outerWidth(true);
-//         var b1 = y1 + h1;
-//         var r1 = x1 + w1;
-//         var x2 = $div2.offset().left;
-//         var y2 = $div2.offset().top;
-//         var h2 = $div2.outerHeight(true);
-//         var w2 = $div2.outerWidth(true);
-//         var b2 = y2 + h2;
-//         var r2 = x2 + w2;
-
-//        if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
-//         return true;
-//     }
-
-//   function repeat() {
-//         if (collision(buddy, box) {
-//             addPoint();
-//         }
+	// function petting () {
+	// 	collision(buddy, box)
+	// 	}
 
 
+	// var buddy = $("#buddy");
+	// var box = $(".box");
+
+
+	// function collision($div1, $div2) {
+	//         var x1 = $div1.offset().left;
+	//         var y1 = $div1.offset().top;
+	//         var h1 = $div1.outerHeight(true);
+	//         var w1 = $div1.outerWidth(true);
+	//         var b1 = y1 + h1;
+	//         var r1 = x1 + w1;
+	//         var x2 = $div2.offset().left;
+	//         var y2 = $div2.offset().top;
+	//         var h2 = $div2.outerHeight(true);
+	//         var w2 = $div2.outerWidth(true);
+	//         var b2 = y2 + h2;
+	//         var r2 = x2 + w2;
+
+	//        if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
+	//         return true;
+	//     }
+
+	// function repeat() {
+ //        if (collision(buddy, box)) {
+ //            stopthegame();
+ //            return;
+ //        }
+ //    }
+
+ //    function stopthegame () {
+
+ //    }
 
 });
 
