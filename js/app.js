@@ -32,7 +32,7 @@ $(document).ready(function() {
 	//     });
 	// }, 20);
 
-
+		// To randomize the puppies I used math random and math round
 		function random(min,max){
  	 		return Math.round(Math.random() * (max-min) + min);
  		}
@@ -103,30 +103,33 @@ $(document).ready(function() {
                 }  
               }, 6000);
 
-// 	//basic timer layout
-// 			// function startTimer(duration, display) {
-// 			//     var timer = duration, minutes, seconds;
-// 			//     setInterval(function () {
-// 			//         minutes = parseInt(timer / 60, 10);
-// 			//         seconds = parseInt(timer % 60, 10);
+	// basic timer layout
+			function startTimer(duration, display) {
+			    var timer = duration, minutes, seconds;
+			    setInterval(function () {
+			        minutes = parseInt(timer / 60, 10);
+			        seconds = parseInt(timer % 60, 10);
 
-// 			//         minutes = minutes < 10 ? "0" + minutes : minutes;
-// 			//         seconds = seconds < 10 ? "0" + seconds : seconds;
+			        minutes = minutes < 10 ? "0" + minutes : minutes;
+			        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-// 			//         display.text(minutes + ":" + seconds);
-// 			//         	// need to cap it at 30 secs
-// 			//         if (--timer < 0) {
-// 			//         	alert ("Sorry out of time! Player 2, you're up!")
-// 			//             timer = duration;
-// 			//         }
-// 			//     }, 1000);
-// 			// }
-// 			// 	// 30 seconds per round
-// 			// jQuery(function ($) {
-// 			//     var thirtySeconds = 30 * 1,
-// 			//         display = $('#counter');
-// 			//     startTimer(thirtySeconds, display);
-// 			// });
+			        display.text(minutes + ":" + seconds);
+			        	// need to cap it at 30 secs
+			        if (--timer < 0) {
+			        	// alert ("Sorry out of time! Player 2, you're up!")
+			        	if(window.prompt('Out of time! Check out the high scores at','the Scoreboard Page'))
+  location.href='https://mfullford.github.io/project1/scoreBoard.html';
+			            timer = duration;
+			        }
+			    }, 1000);
+			}
+				// 30 seconds per round
+			jQuery(function ($) {
+			    var thirtySeconds = 30 * 1,
+			        display = $('#counter');
+			        console.log("hey this is counting")
+			    startTimer(thirtySeconds, display);
+			});
 
 
 // pseudo code for other collision detection
@@ -181,16 +184,33 @@ $(document).ready(function() {
  //    }
 
 
-	var highscore = localStorage.getItem("highscore");
+		var highscore = localStorage.getItem("highscore");
 
-	if(highscore !== null){
-    if (score > highscore) {
-        localStorage.setItem("highscore", score);      
-    }
+		function scoring() {
+			if(highscore !== null){
+	    	if (currentScore > highscore) {
+	        	localStorage.setItem("highscore", currentScore);      
+	    	}
+			} else{
+			    localStorage.setItem("highscore", currentScore);
+			}
+		}
+
+		$(".scoreboard").append(highscore);
+
+if (currentScore == 15)  {
+    var pontosArr = JSON.parse(localStorage.pontosSalvos || '[]');
+    pontosArr.push(+pontos);
+    // Sorts highest to lowest
+    pontosArr.sort(function(a, b) { return b - a; });
+    localStorage.pontosSalvos = JSON.stringify(pontosArr);
+
+    var pop = document.getElementById ( "alerta_ajuda");
+    pop.style.display = 'inline';
+    contador = 0;
+
 }
-else{
-    localStorage.setItem("highscore", currentscore);
-}
+
 
 
 });

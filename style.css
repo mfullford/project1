@@ -192,4 +192,23 @@
 	}
 
 }
+/*---------  SCOREBOARD ---------*/
+
+
+	.scoreboard {
+		color: yellow;
+		font-family: 'Cabin Sketch', cursive;
+		font-size: 60px;
+		position: relative;
+		z-index:9999;
+		background-color: orange;
+		opacity: .7;
+		border-radius: 5px;
+		left: 425px;
+		padding: 10px;
+		text-align: center;
+		width: 500px;
+		height: 500px;
+		top: -500px;
+	}
 
