@@ -73,11 +73,12 @@
 		font-weight: bold;
 		font-family: 'Open Sans', sans-serif;
 		margin-top: 60px;
-		margin-left: 32%;
+		margin-left: 39%;
 		border-radius: 5px;
 		text-align: center;
 		margin-bottom: 50px;
-		width: 35%;
+		width: 20%;
+		height:300px;
 	}
 
 	/*--- Game Page Only -----*/
@@ -204,11 +205,73 @@
 		background-color: orange;
 		opacity: .7;
 		border-radius: 5px;
-		left: 425px;
+		left: 410px;
 		padding: 10px;
 		text-align: center;
-		width: 500px;
+		width: 400px;
 		height: 500px;
-		top: -500px;
+		top: -1000px;
+		margin-top: 40px;
+		display: inline-block;
+		left: 460%;
 	}
-
+	th {
+		color: yellow;
+		font-family: 'Cabin Sketch', cursive;
+		font-size: 40px;
+	}
+	div#form1{
+		width: 250px;
+		height:300px;
+		border-radius:3px;
+		float: right;
+		text-align:center;
+		background-color: yellow;
+		border: 5px solid white;
+		color: orange;
+		padding: 7px;
+		font-size: large;
+		font-weight: bold;
+		font-family: 'Open Sans', sans-serif;
+		top: -2000px;
+		display: inline-block;
+	}
+	h3,p{
+	text-align:center;
+	font-family:'Raleway',sans-serif;
+	color: orange;
+	}
+	input{
+	width:100%;
+	margin:10px 0;
+	padding:5px;
+	height:35px;
+	box-shadow:1px 1px 1px 1px gray;
+	border-radius:3px
+	}
+	input#submit{
+	width:100%;
+	margin:10px 15px 10px 0;
+	padding:5px;
+	background-color:#3fb8e8;
+	box-shadow:0 3px 0 0 #3293ba;
+	border-radius:3px;
+	color:#fff;
+	height:41px;
+	font-size:16px
+	}
+	textarea{
+	margin:10px 0;
+	padding:5px;
+	box-shadow:1px 1px 1px 1px gray;
+	border-radius:3px
+	}
+	div#container{
+	margin:50px auto;
+	width:960px
+	}
+	h2{
+	font-family:'Raleway',sans-serif;
+	color: orange;
+	text-shadow:1px 1px 1px gray
+	}
