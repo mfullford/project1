@@ -103,30 +103,32 @@ $(document).ready(function() {
                 }  
               }, 6000);
 
-// 	//basic timer layout
-// 			// function startTimer(duration, display) {
-// 			//     var timer = duration, minutes, seconds;
-// 			//     setInterval(function () {
-// 			//         minutes = parseInt(timer / 60, 10);
-// 			//         seconds = parseInt(timer % 60, 10);
+	// basic timer layout
+			function startTimer(duration, display) {
+			    var timer = duration, minutes, seconds;
+			    setInterval(function () {
+			        minutes = parseInt(timer / 60, 10);
+			        seconds = parseInt(timer % 60, 10);
 
-// 			//         minutes = minutes < 10 ? "0" + minutes : minutes;
-// 			//         seconds = seconds < 10 ? "0" + seconds : seconds;
+			        minutes = minutes < 10 ? "0" + minutes : minutes;
+			        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-// 			//         display.text(minutes + ":" + seconds);
-// 			//         	// need to cap it at 30 secs
-// 			//         if (--timer < 0) {
-// 			//         	alert ("Sorry out of time! Player 2, you're up!")
-// 			//             timer = duration;
-// 			//         }
-// 			//     }, 1000);
-// 			// }
-// 			// 	// 30 seconds per round
-// 			// jQuery(function ($) {
-// 			//     var thirtySeconds = 30 * 1,
-// 			//         display = $('#counter');
-// 			//     startTimer(thirtySeconds, display);
-// 			// });
+			        display.text(minutes + ":" + seconds);
+			        	// need to cap it at 30 secs
+			        if (--timer < 0) {
+			        	// alert ("Sorry out of time! Player 2, you're up!")
+			        	if(window.prompt('Out of time! Click okay to check out the high scores on the','BOARD OF BEST PUPPY BUDDIES'))
+  location.href='https://mfullford.github.io/project1/scoreBoard.html';
+			            timer = duration;
+			        }
+			    }, 1000);
+			}
+				// 30 seconds per round
+			jQuery(function ($) {
+			    var thirtySeconds = 30 * 1,
+			        display = $('#counter');
+			    startTimer(thirtySeconds, display);
+			});
 
 
 // pseudo code for other collision detection
