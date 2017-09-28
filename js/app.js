@@ -1,15 +1,10 @@
 $(document).ready(function() {
 
-
-	// var gobal hand set interval runs every 500 seconds 
-
-	// close interaction with cursor
-
 	$("body").css('cursor', 'url(images/hand.png) 6 6, auto');
 
 
 
- //  THIS WAS MY OG collision detection but I couldn't figure it out):		// create a container and a box to move around 
+ //  THIS WAS MY OG collision detection but I couldn't figure it out): create a container and a box to move around 
 	// var game = $('#game'),
 	//     buddy = $('#buddy'),
 	//     maxValue = game.width() - buddy.width(),
@@ -42,13 +37,15 @@ $(document).ready(function() {
  	 		return Math.round(Math.random() * (max-min) + min);
  		}
 
+ 		//
+
 		function setBG(){
 			if (Math.round(Math.random())){
 				return "http://www.pholody.com/img/running_dog.png";
 			 } else {
  	    		return "https://s-media-cache-ak0.pinimg.com/originals/30/82/d0/3082d0250b91ff5dc176160101f744e4.jpg";																								  } 
 			 	}	
-				
+	// dropping puppies everywhere	
 
 		function dropBox(){																								
 			var length = random(100, ($(".game").width() - 100));
@@ -60,7 +57,7 @@ $(document).ready(function() {
  			});
 
 	  
-//set data and bg based on data
+//have to set/css the data
 		thisBox.data("test", Math.round(Math.random()));
 			if(thisBox.data("test")){
 				thisBox.css({"background": "url('http://www.pholody.com/img/running_dog.png')", "background-size":"contain", "background-repeat":"no-repeat"});
@@ -68,7 +65,7 @@ $(document).ready(function() {
 				thisBox.css({"background": "url('https://s-media-cache-ak0.pinimg.com/originals/30/82/d0/3082d0250b91ff5dc176160101f744e4.jpg')", "background-size":"contain", "background-repeat":"no-repeat"});
 			} 
 	  
-//insert gift element
+//CUE PUPPIES
 		$(".game").append(thisBox);
   
 //random start for animation
@@ -88,15 +85,15 @@ $(document).ready(function() {
 			dropBox();
 		}
 
-		var score = 0;
+		var currentScore = 0;
 
 		$(document).on('click', '.box', function(){
   			if($(this).data("test")){
-				score++;
+				currentScore++;
 			} else {
-				score++;
+				currentScore++;
 			}
-   			$(".score").html(score);
+   			$(".score").html(currentScore);
   			$(this).remove();
  		});
 
@@ -132,7 +129,8 @@ $(document).ready(function() {
 // 			// });
 
 
-// pseudo code
+// pseudo code for other collision detection
+
 // need to calculate the position of each box and the position of buddy 
 // need to then compare those positions continiously
 
@@ -181,5 +179,18 @@ $(document).ready(function() {
  //    function stopthegame () {
 
  //    }
+
+
+	var highscore = localStorage.getItem("highscore");
+
+	if(highscore !== null){
+    if (score > highscore) {
+        localStorage.setItem("highscore", score);      
+    }
+}
+else{
+    localStorage.setItem("highscore", currentscore);
+}
+
 
 });
