@@ -89,7 +89,7 @@ $(document).ready(function() {
 			        display.text(minutes + ":" + seconds);
 			        	// need to cap it at 30 secs
 			        if (--timer < 0) {
-			        	alert ("Sorry out of time! Next player, you're up!")
+			        	alert ("Sorry out of time! Click that reset button to start again!")
 		// 	        	if(window.prompt('Out of time! Check out the high scores at','the Scoreboard Page'))
   // location.href='https://mfullford.github.io/project1/scoreBoard.html';
 			            timer = duration;
