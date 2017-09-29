@@ -67,6 +67,8 @@ $(document).ready(function() {
 			}
    			$(".score").html(currentScore);
   			$(this).remove();
+			// Add audio function when box is clicked
+  			audio.play();
  		});
 
 		var runGame = setInterval(function(){
@@ -144,6 +146,7 @@ $(document).ready(function() {
 		 }
 		 resetGame();
 
+		var audio=document.getElementsByTagName("audio")[0];
 });
 
 // The Graveyard 
