@@ -1,43 +1,15 @@
 $(document).ready(function() {
 
+
+		// Creates an image for the cursor
 	$("body").css('cursor', 'url(images/hand.png) 6 6, auto');
-
-
-
- //  THIS WAS MY OG collision detection but I couldn't figure it out): create a container and a box to move around 
-	// var game = $('#game'),
-	//     buddy = $('#buddy'),
-	//     maxValue = game.width() - buddy.width(),
-	//     keysPressed = {},
-	//     distancePerIteration = 10;
-	//     	// make it make it move yo
-	// function calculateNewValue(oldValue, keyCode1, keyCode2) {
-	//     var newValue = parseInt(oldValue, 10)
-	//                    - (keysPressed[keyCode1] ? distancePerIteration : 0)
-	//                    + (keysPressed[keyCode2] ? distancePerIteration : 0);
-	//     return newValue < 0 ? 0 : newValue > maxValue ? maxValue : newValue;
-	// }
-
-	// $(window).keydown(function(event) { keysPressed[event.which] = true; });
-	// $(window).keyup(function(event) { keysPressed[event.which] = false; });
-
-	// setInterval(function() {
-	//     buddy.css({
-	//         left: function(index ,oldValue) {
-	//             return calculateNewValue(oldValue, 37, 39);
-	//         },
-	//         top: function(index, oldValue) {
-	//             return calculateNewValue(oldValue, 38, 40);
-	//         }
-	//     });
-	// }, 20);
 
 		// To randomize the puppies I used math random and math round
 		function random(min,max){
  	 		return Math.round(Math.random() * (max-min) + min);
  		}
 
- 		//
+ 		//Giving us the two puppy options
 
 		function setBG(){
 			if (Math.round(Math.random())){
@@ -45,7 +17,7 @@ $(document).ready(function() {
 			 } else {
  	    		return "https://s-media-cache-ak0.pinimg.com/originals/30/82/d0/3082d0250b91ff5dc176160101f744e4.jpg";																								  } 
 			 	}	
-	// dropping puppies everywhere	
+		// Dropping puppies everywhere	
 
 		function dropBox(){																								
 			var length = random(100, ($(".game").width() - 100));
@@ -57,7 +29,7 @@ $(document).ready(function() {
  			});
 
 	  
-//have to set/css the data
+		//Set/css the data
 		thisBox.data("test", Math.round(Math.random()));
 			if(thisBox.data("test")){
 				thisBox.css({"background": "url('http://www.pholody.com/img/running_dog.png')", "background-size":"contain", "background-repeat":"no-repeat"});
@@ -65,15 +37,15 @@ $(document).ready(function() {
 				thisBox.css({"background": "url('https://s-media-cache-ak0.pinimg.com/originals/30/82/d0/3082d0250b91ff5dc176160101f744e4.jpg')", "background-size":"contain", "background-repeat":"no-repeat"});
 			} 
 	  
-//CUE PUPPIES
+		//CUE PUPPIES
 		$(".game").append(thisBox);
   
-//random start for animation
+		//Start for animation
 		setTimeout(function(){
 		thisBox.addClass("move");
 		}, random(0, 6000) );
   
-//remove this object when animation is over
+		//Remove this object when you click
 		thisBox.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                function(event) {
     			$(this).remove();
@@ -84,7 +56,7 @@ $(document).ready(function() {
 		for (i = 0; i < 10; i++) { 
 			dropBox();
 		}
-
+		// On click, add exponentially to the score
 		var currentScore = 0;
 
 		$(document).on('click', '.box', function(){
@@ -131,6 +103,78 @@ $(document).ready(function() {
 		// 	    startTimer(thirtySeconds, display);
 		// 	});
 
+
+		// Created a form for users to submit their high scores
+
+		$(document).ready(function() {
+			$("div#form1").append(
+				// Creating Form Div and Adding <h2> and <p> Paragraph Tag in it.
+				$("<h3/>").text("Player Info"), $("<p/>").text("Fill out the info bellow to save your high score!"), $("<form/>", {
+				action: '#',
+				method: '#'
+				}).append(
+				// Create <form> Tag and Appending in HTML Div form1.
+				$("<input/>", {
+				type: 'text',
+				id: 'vname',
+				name: 'name',
+				placeholder: 'Your Name'
+				}), // Creating Input Element With Attribute.
+				$("<input/>", {
+				type: 'text',
+				id: 'vemail',
+				name: 'email',
+				placeholder: 'Your Highscore'
+				}), $("<br/>"), $("<input/>", {
+				type: 'submit',
+				id: 'submit',
+				value: 'Submit'
+			})))
+		});
+
+		// The timer resets automatically, but the score doesn't so I needed to add a restart button
+		var reset = document.querySelector('.reset');
+		 	console.log(reset);
+		 	function resetGame () {
+		  	reset.addEventListener("click", function() {
+		    location.reload();
+		    // alert("clicked reset button");
+		  });
+		  
+		 }
+		 resetGame();
+
+});
+
+// The Graveyard 
+
+ //  THIS WAS MY OG collision detection but I couldn't figure it out): create a container and a box to move around 
+	// var game = $('#game'),
+	//     buddy = $('#buddy'),
+	//     maxValue = game.width() - buddy.width(),
+	//     keysPressed = {},
+	//     distancePerIteration = 10;
+	//     	// make it make it move yo
+	// function calculateNewValue(oldValue, keyCode1, keyCode2) {
+	//     var newValue = parseInt(oldValue, 10)
+	//                    - (keysPressed[keyCode1] ? distancePerIteration : 0)
+	//                    + (keysPressed[keyCode2] ? distancePerIteration : 0);
+	//     return newValue < 0 ? 0 : newValue > maxValue ? maxValue : newValue;
+	// }
+
+	// $(window).keydown(function(event) { keysPressed[event.which] = true; });
+	// $(window).keyup(function(event) { keysPressed[event.which] = false; });
+
+	// setInterval(function() {
+	//     buddy.css({
+	//         left: function(index ,oldValue) {
+	//             return calculateNewValue(oldValue, 37, 39);
+	//         },
+	//         top: function(index, oldValue) {
+	//             return calculateNewValue(oldValue, 38, 40);
+	//         }
+	//     });
+	// }, 20);
 
 // pseudo code for other collision detection
 
@@ -197,42 +241,3 @@ $(document).ready(function() {
 		// }
 
 		// $(".scoreboard").append(highscore);
-
-		function saveForm() {
-			var name = document.getElementById("name").value;
-			var highscore = document.getElementById("highscore").value;
-
-			localStorage.name = name;
-        	localStorage.highscore = highscore;
-    	}
-
-
-		$(document).ready(function() {
-			$("div#form1").append(
-				// Creating Form Div and Adding <h2> and <p> Paragraph Tag in it.
-				$("<h3/>").text("Player Info"), $("<p/>").text("Fill out the info bellow to save your high score!"), $("<form/>", {
-				action: '#',
-				method: '#'
-				}).append(
-				// Create <form> Tag and Appending in HTML Div form1.
-				$("<input/>", {
-				type: 'text',
-				id: 'vname',
-				name: 'name',
-				placeholder: 'Your Name'
-				}), // Creating Input Element With Attribute.
-				$("<input/>", {
-				type: 'text',
-				id: 'vemail',
-				name: 'email',
-				placeholder: 'Your Highscore'
-				}), $("<br/>"), $("<input/>", {
-				type: 'submit',
-				id: 'submit',
-				value: 'Submit'
-			})))
-		});
-
-
-
-});

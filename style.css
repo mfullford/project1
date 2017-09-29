@@ -28,7 +28,7 @@
 		font-family: 'Cabin Sketch', cursive;
 		font-size: 60px;
 		position: relative;
-		z-index:9999;
+		z-index:9000; /*Brings everything to the very front */
 	}
 
 	.heading {
@@ -39,12 +39,13 @@
 		text-align: center;
 		width: 32%;
 	}
+	/*Sky background here*/
 	.top {
 		background-image: url("http://greatercarlisleproject.dickinson.edu/wp-content/uploads/2015/02/bluesky.jpg");
 		height: 30%;
 		width: 100%;
 	}
-
+	/*Grassy hill background here*/
 	.game{
 	  background-image: url("http://thegoodhuman.com/wp2/wp-content/uploads/2014/04/lawn.jpg");
 	 -webkit-background-size: cover;
@@ -56,13 +57,14 @@
 	  position: relative;
 	  overflow: hidden;
 	}
+	/*Adds another sky to fill the top space*/
 	.container {
 		background-image: url("http://greatercarlisleproject.dickinson.edu/wp-content/uploads/2015/02/bluesky.jpg");
 		height: 100%;
 		width: 100%;
 	}
 	.custom {
-	  cursor: url(images/hand.png) 6 6, auto;
+	  cursor: url(images/hand.png) 6 6, auto;  /*Back up in case jquery fails */
 	}
 	.instructions {
 		background-color: yellow;
@@ -73,12 +75,11 @@
 		font-weight: bold;
 		font-family: 'Open Sans', sans-serif;
 		margin-top: 60px;
-		margin-left: 39%;
+		margin-left: 32%;
 		border-radius: 5px;
 		text-align: center;
 		margin-bottom: 50px;
-		width: 20%;
-		height:300px;
+		width: 35%;
 	}
 
 	/*--- Game Page Only -----*/
@@ -103,30 +104,44 @@
 		font-family: 'Cabin Sketch', cursive;
 		font-size: 50px;
 		position: relative;
-		margin-bottom: 10px;
 		margin: 0 auto;
 		color: yellow;
-		top: -70px;
+		top: -100px;
 		text-align: center;
 		width: 12%;
-		z-index:9999;
+		z-index:9000;
 	}
 
 	.score {
-	   margin: 0 auto;
+	  margin: 0 auto;
 	  text-align: center;
 	  font-family: 'Cabin Sketch', cursive;
 	  font-size: 50px;
 	  position: relative;
-	  margin-bottom: 10px;
 	  background-color: orange;
 	  color: yellow;
 	  width: 12%;
-	  z-index:9999;
+	  z-index:9000;
 	  float: left;
 	  border-radius: 5px;
-	  top: -70px;
+	  top: -100px;
 	  user-select:none;
+	}
+
+	.reset {
+		background-color: orange;
+		border-radius: 5px;
+		font-family: 'Cabin Sketch', cursive;
+		font-size: 30px;
+		position: relative;
+		margin: 0 auto;
+		color: yellow;
+		text-align: center;
+		width: 10%;
+		z-index:9999;
+		float: left;
+		left: -11%;
+		top: -17%;
 	}
 
 	.begin {
@@ -142,7 +157,7 @@
 	    border-radius: 5px;
 	    font-size: 20px;
 	    text-decoration: none;
-	    cursor: url(images/hand.png), auto;
+	    cursor: url(images/hand.png), auto;  /*Without the url, the button forces an auto cursor */
 	}
 	.box{
 	  width: 100px;
@@ -155,7 +170,7 @@
 	}
 
 	.move{
-	   transform:translateY(120vh);
+	   transform:translateY(120vh);   /* Moves down the Y axis*/
 	}
 	.button{
 	    margin: 0 10px 10px 0;
@@ -176,102 +191,19 @@
 		position:absolute;
 		top: -150px;
 		transition: transform 1.5s linear;
-		cursor: url(images/handflip.png), auto;
+		cursor: url(images/handflip.png), auto; /*Adds the petting feature*/
 		z-index: 100;
 	}
 	.move.animated {
 			animation-name: bounce;
-			animation-duration: .5s; /* or: Xms */
+			animation-duration: .5s; 
 			animation-iteration-count: 10;
-			animation-direction: normal; /* or: alternate, reverse */
-			animation-timing-function: ease-out; /* or: ease, ease-in, ease-in-out, linear, cubic-bezier(x1, y1, x2, y2) */
-			animation-fill-mode: forwards; /* or: backwards, both, none */
-			animation-delay: 0s; /* or: Xms */
+			animation-direction: normal; 
+			animation-timing-function: ease-in; 
+			animation-delay: 0s; 
 		}
 	.move{
 	   transform:translateY(120vh);
 	}
 
 }
-/*---------  SCOREBOARD ---------*/
-
-
-	.scoreboard {
-		color: yellow;
-		font-family: 'Cabin Sketch', cursive;
-		font-size: 60px;
-		position: relative;
-		z-index:9999;
-		background-color: orange;
-		opacity: .7;
-		border-radius: 5px;
-		left: 410px;
-		padding: 10px;
-		text-align: center;
-		width: 400px;
-		height: 500px;
-		top: -1000px;
-		margin-top: 40px;
-		display: inline-block;
-		left: 460%;
-	}
-	th {
-		color: yellow;
-		font-family: 'Cabin Sketch', cursive;
-		font-size: 40px;
-	}
-	div#form1{
-		width: 250px;
-		height:300px;
-		border-radius:3px;
-		float: right;
-		text-align:center;
-		background-color: yellow;
-		border: 5px solid white;
-		color: orange;
-		padding: 7px;
-		font-size: large;
-		font-weight: bold;
-		font-family: 'Open Sans', sans-serif;
-		top: -2000px;
-		display: inline-block;
-	}
-	h3,p{
-	text-align:center;
-	font-family:'Raleway',sans-serif;
-	color: orange;
-	}
-	input{
-	width:100%;
-	margin:10px 0;
-	padding:5px;
-	height:35px;
-	box-shadow:1px 1px 1px 1px gray;
-	border-radius:3px
-	}
-	input#submit{
-	width:100%;
-	margin:10px 15px 10px 0;
-	padding:5px;
-	background-color:#3fb8e8;
-	box-shadow:0 3px 0 0 #3293ba;
-	border-radius:3px;
-	color:#fff;
-	height:41px;
-	font-size:16px
-	}
-	textarea{
-	margin:10px 0;
-	padding:5px;
-	box-shadow:1px 1px 1px 1px gray;
-	border-radius:3px
-	}
-	div#container{
-	margin:50px auto;
-	width:960px
-	}
-	h2{
-	font-family:'Raleway',sans-serif;
-	color: orange;
-	text-shadow:1px 1px 1px gray
-	}
