@@ -23,3 +23,7 @@ Using math round and math random I made the puppies appear at the top of my cont
 Initially I wanted to use a left/right moving protagonist with collision detection to add points. Unfortunately, I wasn't able to figure out how to detect every single position of all of my boxes (puppies) because there were a ton and math is hard so I pivoted to use my cursor instead. I also created a third page which was meant to be my scoreboard page, but I couldn't figure out how to locally store the scores and then populate the highest in that div.
 
 I have a graveyard in my js with my many attempts at collision detection, I'm going to try to go back and tinker with it to see if I can figure it out eventually!
+
+### Thanks for playin!
+
+![giphy](https://user-images.githubusercontent.com/31824846/31026404-90162cbe-a503-11e7-96bf-f75058151302.gif)
