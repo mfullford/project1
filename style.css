@@ -110,6 +110,9 @@
 		text-align: center;
 		width: 12%;
 		z-index:9000;
+		animation-name: pulse_animation;
+		-webkit-animation-delay: 20s; /* Safari 4.0 - 8.0 */
+    	animation-delay: 20s;
 	}
 
 	.score {
@@ -247,4 +250,22 @@
          -webkit-animation-name: bounce; 
          animation-name: bounce; 
     }
+
+    @keyframes pulse_animation {
+		0% { transform: scale(1); }
+		30% { transform: scale(1); }
+		40% { transform: scale(1); }
+		50% { transform: scale(1.40); }
+		60% { transform: scale(1); }
+		70% { transform: scale(1); }
+		80% { transform: scale(1); }
+		100% { transform: scale(1); }
+	}
+	.pulse {
+		animation-name: pulse_animation;
+		animation-duration: 1000ms;
+		transform-origin:70% 70%;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
 
