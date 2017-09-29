@@ -67,6 +67,7 @@ $(document).ready(function() {
 			}
    			$(".score").html(currentScore);
   			$(this).remove();
+  			audio.play();
  		});
 
 		var runGame = setInterval(function(){
@@ -104,33 +105,33 @@ $(document).ready(function() {
 			});
 
 
-		// Created a form for users to submit their high scores
+		// // Created a form for users to submit their high scores
 
-		$(document).ready(function() {
-			$("div#form1").append(
-				// Creating Form Div and Adding <h2> and <p> Paragraph Tag in it.
-				$("<h3/>").text("Player Info"), $("<p/>").text("Fill out the info bellow to save your high score!"), $("<form/>", {
-				action: '#',
-				method: '#'
-				}).append(
-				// Create <form> Tag and Appending in HTML Div form1.
-				$("<input/>", {
-				type: 'text',
-				id: 'vname',
-				name: 'name',
-				placeholder: 'Your Name'
-				}), // Creating Input Element With Attribute.
-				$("<input/>", {
-				type: 'text',
-				id: 'vemail',
-				name: 'email',
-				placeholder: 'Your Highscore'
-				}), $("<br/>"), $("<input/>", {
-				type: 'submit',
-				id: 'submit',
-				value: 'Submit'
-			})))
-		});
+		// $(document).ready(function() {
+		// 	$("div#form1").append(
+		// 		// Creating Form Div and Adding <h2> and <p> Paragraph Tag in it.
+		// 		$("<h3/>").text("Player Info"), $("<p/>").text("Fill out the info bellow to save your high score!"), $("<form/>", {
+		// 		action: '#',
+		// 		method: '#'
+		// 		}).append(
+		// 		// Create <form> Tag and Appending in HTML Div form1.
+		// 		$("<input/>", {
+		// 		type: 'text',
+		// 		id: 'vname',
+		// 		name: 'name',
+		// 		placeholder: 'Your Name'
+		// 		}), // Creating Input Element With Attribute.
+		// 		$("<input/>", {
+		// 		type: 'text',
+		// 		id: 'vemail',
+		// 		name: 'email',
+		// 		placeholder: 'Your Highscore'
+		// 		}), $("<br/>"), $("<input/>", {
+		// 		type: 'submit',
+		// 		id: 'submit',
+		// 		value: 'Submit'
+		// 	})))
+		// });
 
 		// The timer resets automatically, but the score doesn't so I needed to add a restart button
 		var reset = document.querySelector('.reset');
@@ -143,6 +144,8 @@ $(document).ready(function() {
 		  
 		 }
 		 resetGame();
+
+		 var audio=document.getElementsByTagName("audio")[0];
 
 });
 
