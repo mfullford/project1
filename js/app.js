@@ -100,7 +100,6 @@ $(document).ready(function() {
 			    var thirtySeconds = 30 * 1,
 			        display = $('#counter');
 			        console.log("hey this is counting")
-			        audio.play();
 			    startTimer(thirtySeconds, display);
 			});
 
@@ -144,10 +143,6 @@ $(document).ready(function() {
 		  
 		 }
 		 resetGame();
-
-		 var audio=document.getElementsByTagName("audio")[0];
-
-
 
 });
 
