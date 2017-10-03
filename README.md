@@ -1,4 +1,4 @@
-# [Pet A Puppy](mfullford.github.io/project-1)
+# [Pet A Puppy](https://mfullford.github.io/project-1/)
 
 My first project is a game that involves:
 
